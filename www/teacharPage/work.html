@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>my homework</title>
+		<meta charset=utf-8>
+
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	</head>
+	<body style="">
+		<nav class="nav navbar navbar-fixed-top">
+			<span class="btn glyphicon glyphicon-align-justify" style="margin:10px;" id='click'></span>
+		</nav>
+		<div class="container" style="position:relative;top:50px;">
+			<label for="tid">老师id：</label>
+			<input type="text" id='tid' class="form-control">
+			<label for="content">作业内容：</label>
+			<input type="text" class='form-control' id="content">
+			<label for="annex">附件：</label>
+			<input type="file" id='annex' class="form-control">
+			<label for="mark">备注：</label>
+			<input type="text" class='form-control' id="mark">
+			<label for="course">课程编号：</label>
+			<input type="text" class='form-control' id="course">
+			<label for="section">章节编号：</label>
+			<input type="text" class='form-control' id="section">
+			<br>
+			<button id='creat' class="btn">创建</button>
+		</div>
+
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

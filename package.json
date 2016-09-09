@@ -17,6 +17,8 @@
     "compress": "^0.99.0",
     "cookie": "^0.2.4",
     "crypto": "0.0.3",
+    "ejs": "^2.5.2",
+    "fs": "0.0.1-security",
     "install": "^0.8.1",
     "koa": "^1.1.2",
     "koa-bodyparser": "^2.2.0",

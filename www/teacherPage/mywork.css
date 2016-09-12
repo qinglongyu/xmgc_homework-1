@@ -1,0 +1,30 @@
+/*.contain{*/
+/*position: absolute;*/
+/*}*/
+body{
+    padding-top: 45px;
+}
+._nav{
+    min-height: 40px;!important;
+    width: 100%;
+    background-color: rgba(255,255,255,0.4);
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.worklist{
+    margin-top: 10%;
+}
+.worklist li {
+    background-color:rgba(255,255,255,0.2);
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    border: none;
+    margin: 15px;
+}
+.worklist li a {
+    color: white;
+}

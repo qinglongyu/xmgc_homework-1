@@ -79,6 +79,59 @@ _rotr.apis.test = function() {
     return co;
 };
 
+_rotr.apis.moban = function() {
+    var ctx = this;
+    var co = $co(function * () {
+        var sqlstr = "select * from emp where empId = '7369';";
+        var dat = {};
+        var rows = yield _ctnu([_mysql.conn,'query'],sqlstr);
+        if(!rows) Error("找不到用户");
+        dat.user = rows[0];
+        ctx.body = dat;
+        return ctx;
+    });
+    return co;
+};
+
+_rotr.apis.ceshi = function() {
+    var ctx = this;
+    var co = $co(function * () {
+        var html=require('fs').readFileSync('../xmgc_homework/www/teacherPage/background.html', 'utf8');
+        ctx.body =html;
+        return ctx;
+    });
+    return co;
+};
+
+_rotr.apis.html = function() {
+    var ctx = this;
+    var co = $co(function * () {
+
+		var html=require('fs').readFileSync('../xmgc_homework/www/teacherPage/addwork.html', 'utf8');
+
+        ctx.body = html;
+        return ctx;
+    });
+    return co;
+};
+
+_rotr.apis.ejs = function() {
+    var ctx = this;
+    var co = $co(function * () {
+
+	var ejs = require('ejs');
+    var str = require('fs').readFileSync('../xmgc_homework/ejs/ejsModen.ejs', 'utf8');
+
+	var ret = ejs.render(str, {
+	 names: ['foo', 'bar', 'baz']
+	});
+	console.log(ret);
+
+        ctx.body =ret;
+        return ctx;
+    });
+    return co;
+};
 
 _rotr.apis.creatHw = function() {
     var ctx = this;
@@ -164,33 +217,32 @@ _rotr.apis.login = function() {
     var co = $co(function * () {
         
         //拿到和验证数据
-        var name = ctx.query.name || ctx.request.body.name;
-        if (!name ) throw Error('你的姓名格式不合法！');
+        var account = ctx.query.account || ctx.request.body.account;
+        if (!account ) throw Error('你的账户格式不合法！');
         
         var pw = ctx.query.pw || ctx.request.body.pw;
         if (!pw ) throw Error('你的密码格式不合法！');        
         
         //处理数据 
-        var usr;
-        for(var i=0;i<db.length;i++){
-            var dbusr=db[i];
-            if(dbusr.name==name){
-                usr=dbusr;
-            }
-        };
-        
-        if(!usr) throw Error('找不到此用户！');
-        
-        var res={};
-        
-        if(usr.pw==pw){
-            res.code=1;
-        }else{
-            res.code=0;
-        };
+        var sqlstr1 = "select * from user_info where account = '"+account+"';";
+        var rows1 = yield _ctnu([_mysql.conn,'query'],sqlstr1);
+        //console.log(">>>>",rows1);
+        if(!rows1) Error("找不到用户");
+
+        //var sqlstr2 = "select * from user_info where account = '"+account+"' and password = '"+pw+"';";
+        //var rows2 = yield _ctnu([_mysql.conn,'query'],sqlstr2);
+        //if(!rows2) Error("密码错误");
+        //var res={};
+        //
+        //if(usr.pw==pw){
+        //    res.code=1;
+        //}else{
+        //    res.code=0;
+        //};
               
         //返回结果
-        ctx.body = res;
+        //ctx.body = res;
+        //console.log(">>>",ctx);
         return ctx;
     });
     return co;

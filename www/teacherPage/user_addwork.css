@@ -1,0 +1,15 @@
+*{margin:0;padding:0;}
+.user_container{position:relative;top:50px;}
+.title {
+    color:white;
+}
+.drawer-li{
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.1);
+    height: 40px;
+    border: none;
+    color:white;
+}
+.drawer-li a{
+    color:white;
+}

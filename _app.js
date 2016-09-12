@@ -1,7 +1,7 @@
 /*专为其他App提供后端服务，如文件存储服务（qiniu）
  */
 var _app = global._app = {};
-_app.hostPort = 8000;
+_app.hostPort = 8100;
 
 //外部库引入
 var $http = global.$http = require('http');

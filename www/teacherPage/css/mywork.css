@@ -2,7 +2,7 @@
 /*position: absolute;*/
 /*}*/
 body{
-    padding-top: 45px;
+    /*padding-top: 45px;*/
 }
 ._nav{
     min-height: 40px;!important;
@@ -15,7 +15,7 @@ body{
     font-weight: bold;
 }
 .worklist{
-    margin-top: 10%;
+    /*margin-top: 10%;*/
 }
 .worklist li {
     background-color:rgba(255,255,255,0.2);
@@ -28,3 +28,16 @@ body{
 .worklist li a {
     color: white;
 }
+._nav{
+    min-height: 40px;!important;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /*text-align: center;*/
+    display: inline-block;
+    margin: 0;
+}
+

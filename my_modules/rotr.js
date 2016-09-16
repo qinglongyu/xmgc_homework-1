@@ -107,7 +107,7 @@ _rotr.apis.html = function() {
     var ctx = this;
     var co = $co(function * () {
 
-		var html=require('fs').readFileSync('../xmgc_homework/www/teacherPage/addwork.html', 'utf8');
+		var html=require('fs').readFileSync('../xmgc_homework/www/teacherPage/jiekou.html', 'utf8');
 
         ctx.body = html;
         return ctx;
@@ -163,8 +163,54 @@ _rotr.apis.creatHw = function() {
 };
 
 
+_rotr.apis.login = function() {
+    var ctx = this;
+    var co = $co(function * () {
+		var res={};
+       var account = ctx.query.account || ctx.request.body.account;
+       if (!account ) throw Error('账户不能为空！');
+		var res={};
+		var pw = ctx.query.pw || ctx.request.body.pw;
+       if (!pw ) throw Error('密码不能为空！');
+
+		var sqlstr = "select * from user_info where account ='"+account+" ';";
+        var rows = yield _ctnu([_Mysql.conn,'query'],sqlstr);
+		console.log(">>>>",rows.length,rows[0].password);
+        if(rows.length==0) throw Error("找不到用户");
+
+		if(rows[0].password==pw)
+		{res.code=1}
+		else
+		{res.code=0}
 
 
+//		console.log(">>>>",rows[0].password);
+//		console.log(">>>>>",rows);
+        //
+        //var sqlstr1 = "select * from user_info where account ='"+account+"' and password='"+pw+"';";
+        //var rows1 = yield _ctnu([_mysql.conn,'query'],sqlstr1);
+        //if(!rows1) Error("密码错误！");
+
+
+
+        ctx.body =res;
+        return ctx;
+    });
+    return co;
+};
+
+_rotr.apis.kecheng = function() {
+    var ctx = this;
+    var co = $co(function * () {
+
+		var sqlstr = "select name from course_info;";
+        var rows = yield _ctnu([_Mysql.conn,'query'],sqlstr);
+//		console.log(">>>>",rows);
+        ctx.body = rows;
+        return ctx;
+    });
+    return co;
+};
 
 
 
@@ -210,43 +256,7 @@ _rotr.apis.reg = function() {
 };
 
 
-/*测试接口,返回请求的数据
- */
-_rotr.apis.login = function() {
-    var ctx = this;
-    var co = $co(function * () {
-        
-        //拿到和验证数据
-        var account = ctx.query.account || ctx.request.body.account;
-        if (!account ) throw Error('你的账户格式不合法！');
-        
-        var pw = ctx.query.pw || ctx.request.body.pw;
-        if (!pw ) throw Error('你的密码格式不合法！');        
-        
-        //处理数据 
-        var sqlstr1 = "select * from user_info where account = '"+account+"';";
-        var rows1 = yield _ctnu([_mysql.conn,'query'],sqlstr1);
-        //console.log(">>>>",rows1);
-        if(!rows1) Error("找不到用户");
 
-        //var sqlstr2 = "select * from user_info where account = '"+account+"' and password = '"+pw+"';";
-        //var rows2 = yield _ctnu([_mysql.conn,'query'],sqlstr2);
-        //if(!rows2) Error("密码错误");
-        //var res={};
-        //
-        //if(usr.pw==pw){
-        //    res.code=1;
-        //}else{
-        //    res.code=0;
-        //};
-              
-        //返回结果
-        //ctx.body = res;
-        //console.log(">>>",ctx);
-        return ctx;
-    });
-    return co;
-};
 
 
 

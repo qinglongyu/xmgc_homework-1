@@ -13,4 +13,4 @@ var conn=_mysql.conn=$mysql.createConnection({
 conn.connect();
 
 //导出模块
-module.exports = _mysql;
+module.exports = _mysql

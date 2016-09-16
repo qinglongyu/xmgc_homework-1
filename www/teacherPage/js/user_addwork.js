@@ -1,3 +1,19 @@
+$.post('/api/kecheng',function(res){
+//	console.log(">>>",res[1],res.length);
+	for(var attr in res){
+		var data=res[attr];
+		var option=$("#option").clone(true,true);
+		option.html(data.name);
+		option.attr('value',data.name);
+		$('#Sselect').append(option);
+	}
+})
+
+
+
+
+
+
 $('#shangchuan').click(function () {
     _fns.uploadFile2($('#shangchuan'), function (f) {
         console.log('>>>>before:', f);

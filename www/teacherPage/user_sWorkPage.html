@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的作业</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="css/user_sWorkPage.css" rel="stylesheet" />
+
+</head>
+<body>
+<header>
+    <span><input type="image" src="images/but.png" alt="侧边栏按钮" id="input" /></span>
+    <h3>我的作业</h3>
+</header>
+<article>
+<div id="header" class="well1">
+    <div >
+        <img src="images/p4.png"  id="headerLeft"/>
+    </div>
+    <div id="headerRight" >
+        <p>全部作业（20）</p>
+        <p>已交作业（10）</p>
+        <p>待交作业（10）</p>
+    </div>
+</div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default1">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
+                    全部作业<span  class="glyphicon glyphicon-chevron-right mySpan" ></span>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <ul class="list-group">
+                      <li class="list-group-item">html第一章</li>
+                      <li class="list-group-item">html第二章</li>
+                      <li class="list-group-item">html第三章</li>
+                      <li class="list-group-item">html第四章</li>
+                      <li class="list-group-item">html第五章</li>
+                      <li class="list-group-item">html第六章</li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default1">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    已交作业<span class="glyphicon glyphicon-chevron-right mySpan"></span>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">css第一章</li>
+                        <li class="list-group-item">css第二章</li>
+                        <li class="list-group-item">css第三章</li>
+                        <li class="list-group-item">css第四章</li>
+                        <li class="list-group-item">css第五章</li>
+                        <li class="list-group-item">css第六章</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default1">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    待交作业<span class="glyphicon glyphicon-chevron-right mySpan"></span>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">javascript第一章</li>
+                        <li class="list-group-item">javascript第二章</li>
+                        <li class="list-group-item">javascript第三章</li>
+                        <li class="list-group-item">javascript第四章</li>
+                        <li class="list-group-item">javascript第五章</li>
+                        <li class="list-group-item">javascript第六章</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<footer></footer>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="js/user_sWorkPage.js"></script>
+</body>
+</html>

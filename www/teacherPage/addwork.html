@@ -8,11 +8,11 @@
 	<meta charset=utf-8>
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../public/css/bootstrap.css">
-	<link rel="stylesheet" href="user_addwork.css">
+	<link rel="stylesheet" href="css/user_addwork.css">
 </head>
 
-<body background="1.png">
-	<nav class="nav navbar center-block  " style="background-color: rgba(255,255,255,0.2);height: 40px;position: absolute;">
+<body background="images/1.png">
+	<nav class="nav navbar center-block _nav " style="background-color: rgba(255,255,255,0.2);height: 40px;position: absolute;">
 		<!--顶部按钮-->
 		<span class="btn glyphicon glyphicon-align-justify" style="color: white" id='pull' data-toggle="modal" data-target=".bs-example-modal-lg"></span>
 		<div style="color:white;margin: 0 auto;width: 100px;display: inline-block;line-height: 40px">
@@ -32,12 +32,8 @@
 			</div>
 			<div class="form-group">
 				<label for="" class="title">课程</label>
-				<select class="form-control" style="text-align:center" name="" id="">
-					<option value="Html" class="active text-center">Html</option>
-					<option value="Angular">Angular</option>
-					<option value="Bootstrap">Bootstrap</option>
-					<option value="Css">Css</option>
-					<option value="Node">Node</option>
+				<select class="form-control" style="text-align:center" name="" id="Sselect">
+					<option id='option' value="请选择" class="">请选择...</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -69,102 +65,9 @@
 		</form>
 
 	</div>
-
-	<!--
-					<div>
-						<label for="tid">老师id：</label>
-						<input type="text" id='tid' class="form-control">
-						<label for="content">作业内容：</label>
-						<input type="text" class='form-control' id="content">
-						<label for="annex">附件：</label>
-						<input type="file" id='annex' class="form-control">
-						<label for="mark">备注：</label>
-						<input type="text" class='form-control' id="mark">
-						<label for="course">课程编号：</label>
-						<input type="text" class='form-control' id="course">
-						<label for="section">章节编号：</label>
-						<input type="text" class='form-control' id="section">
-					</div>
-
-
-	<!-- 模态框导航-->
-
-
-	<!--<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">-->
-	<!--<div class="modal-dialog modal-lg" style="position:relative;left:10%;height:90%;width:80%">-->
-	<!--<div class="modal-content" style="height:100%;position:relative;">-->
-	<!--<div class="modal-header bg-primary">-->
-	<!--<h4>Homework</h4>-->
-	<!--</div>-->
-	<!--<div class="container-fluid" style="line-height:50px;">-->
-	<!--<span class="glyphicon glyphicon-plus" style='margin-right:1em'></span><span><a href="#">我的首页</a></span>-->
-	<!--</div>-->
-	<!--<div class="modal-body" style="">-->
-	<!--<ul class="list-group" style="position:relative;top:20%;">-->
-	<!--<li class="list-group-item"><a href="#">Cras justo odio</a></li>-->
-	<!--<li class="list-group-item"></li>-->
-	<!--<li class="list-group-item">Dapibus ac facilisis in</li>-->
-	<!--<li class="list-group-item"></li>-->
-	<!--<li class="list-group-item">Morbi leo risus</li>-->
-	<!--<li class="list-group-item"></li>-->
-	<!--<li class="list-group-item">Porta ac consectetur ac</li>-->
-	<!--<li class="list-group-item"></li>-->
-	<!--<li class="list-group-item">Vestibulum at eros</li>-->
-	<!--</ul>-->
-	<!--</div>-->
-	<!--<div class="navbar navbar-fixed-bottom bg-success" style="line-hegight:50px;">-->
-	<!--<h5><span class="glyphicon glyphicon-home" style="margin:0 1em 0 1em"></span>返回项目工厂首页</h5>-->
-	<!--</div>-->
-	<!--</div>-->
-	<!--</div>-->
-	<!--</div>-->
-
-
-
-	<!--侧边栏导航 -->
-
 	<!--&lt;!&ndash;-->
 
-	<div id="drawer" class="col-xs-12 height" style="padding: 0;position: absolute;background: rgba(33,33,33,0.5);z-index: 1089;display: none">
 
-	</div>
-	<div id="drawer1" class="col-xs-9 height" style="background: gainsboro;z-index: 1090;left: -80%;position: absolute">
-		<div class="panel panel-default drawer-li">
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-tag"></span> 共发布作业： 次
-			</div>
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-home"></span>
-				<a href="">首页</a>
-			</div>
-		</div>
-		<div class="panel panel-default drawer-li">
-		</div>
-		<div class="panel panel-default drawer-li">
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-cloud-upload"></span>
-				<a href="">发布作业</a>
-			</div>
-		</div>
-		<div class="panel panel-default drawer-li">
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-th-list"></span>
-				<a href="">作业列表</a>
-			</div>
-		</div>
-		<div class="panel panel-default drawer-li">
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-file"></span>
-				<a href="">作业详情</a>
-			</div>
-		</div>
-		<div class="panel panel-default drawer-li">
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-cog"></span>
-				<a href="">设置</a>
-			</div>
-		</div>
-	</div>
 	<!--&ndash;&gt;-->
 
 	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
@@ -172,8 +75,11 @@
 	<script src="../../public/js/jquery.js"></script>
 	<script src="../../public/js/bootstrap.js"></script>
 	<script src="http://m.xmgc360.com/pie/web/js/common.js"></script>
-	<script src="user_nav.js"></script>
-	<script src="user_addwork.js"></script>
+	<!--载入侧边栏导航-->
+	<script src="js/nav.js"></script>
+
+	<!--上传js-->
+	<script src="js/user_addwork.js"></script>
 </body>
 
 </html>

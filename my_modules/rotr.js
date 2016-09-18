@@ -212,7 +212,31 @@ _rotr.apis.kecheng = function() {
     return co;
 };
 
+_rotr.apis.addwork = function() {
+    var ctx = this;
+    var co = $co(function * () {
+		var userid = ctx.query.useid || ctx.request.body.useid;
+        var title = ctx.query.title || ctx.request.body.title;
+        var content = ctx.query.content || ctx.request.body.content;
+        var Sselect = ctx.query.Sselect || ctx.request.body.Sselect;
+        var section = ctx.query.section || ctx.request.body.section;
+        var mark = ctx.query.mark || ctx.request.body.mark;
+        var annex = ctx.query.wenjian || ctx.request.body.wenjian;
 
+
+		var row= yield _ctnu([_Mysql.conn,'query'],"select cid from course_info where name='"+Sselect+"';");
+		var cid=row[0].cid;
+		var parament=[userid,title,content,cid,section,mark,annex];
+
+		var sqlstr = "insert into work_info(userid,title,content,cid,section,mark,annex) values(?,?,?,?,?,?,?)";
+        var rows = yield _ctnu([_Mysql.conn,'query'],sqlstr,parament);
+		console.log(">>>>",rows.affectedRows);
+		var check=rows.affectedRows;
+        ctx.body =check;
+        return ctx;
+    });
+    return co;
+};
 
 var db=[];
 

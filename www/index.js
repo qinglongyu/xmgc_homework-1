@@ -23,7 +23,7 @@ $("#login2").click(function(){
 
 	var pw=$('#password').val();
 	var password = hex_md5(pw);
-	alert(">>>>"+password);
+//	alert(">>>>"+password);
 
 	var dat={
 		phone:$('#account').val(),

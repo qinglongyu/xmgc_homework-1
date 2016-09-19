@@ -52,7 +52,7 @@ $(function(){
 		$('#drawer').css({display:'block'});
 		$('#drawer1').animate({
 			left:0
-		},'2000')
+		},'slow')
 	});
 	$('#drawer,#drawer1').click(function(){
 		$('#drawer').css({display:'none'})

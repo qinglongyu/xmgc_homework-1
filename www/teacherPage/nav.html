@@ -1,50 +1,75 @@
-<div id="drawer" class="col-xs-12 height" style="padding: 0;position: fixed;background: rgba(33,33,33,0.5);z-index: 1089;display: none"></div>
-<div id="drawer1" class="col-xs-9 height" style="background: rgba(102,178,229,1);z-index: 1090;left: -80%;position: fixed">
-	<div class="panel panel-default drawer-li">
-		<div class="panel-body">
-			<span class="glyphicon glyphicon-tag"></span> 共发布作业： 次
-		</div>
-		<div class="panel-body">
-			<span class="glyphicon glyphicon-home"></span>
-			<a href="">首页</a>
-		</div>
-	</div>
-	<div class="panel panel-default drawer-li"></div>
-	<div class="panel panel-default drawer-li">
-		<div class="panel-body">
-			<span class="glyphicon glyphicon-cloud-upload"></span>
-			<a href="">发布作业</a>
-		</div>
-	</div>
-	<div class="panel panel-default drawer-li">
-		<div class="panel-body">
-			'<span class="glyphicon glyphicon-th-list"></span>
-			<a href="">作业列表</a>
-		</div>
-	</div> '+
-	<div class="panel panel-default drawer-li">
-		<div class="panel-body">
-			'<span class="glyphicon glyphicon-file"></span>
-			<a href="">作业详情</a>
-		</div>
-	</div>
-	<div class="panel panel-default drawer-li">
-		<div class="panel-body">
-			'<span class="glyphicon glyphicon-cog"></span>
-			<a href="">设置</a>
-		</div>
-	</div>
-</div>
-<style>
-	.drawer-li {
-		margin-top: 20px;
-		background-color: rgba(255, 255, 255, 0.1);
-		height: 40px;
-		border: none;
-		color: white;
-	}
+<!doctype html>
+<html>
 
-	.drawer-li a {
-		color: white;
-	}
-</style>;
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width height=device-height initial-scale=1">
+	<title>my homework</title>
+	<meta charset=utf-8>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../public/css/bootstrap.css">
+
+
+	<style>
+		.drawer-li {
+			margin-top: 20px;
+			background-color: rgba(255, 255, 255, 0.1);
+			height: 40px;
+			border: none;
+			color: white;
+		}
+
+		.drawer-li a {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+
+<div id="drawer" class="col-xs-12 height" style="padding: 0;position: fixed;top:0;bottom:0;background: rgba(33,33,33,0.5);z-index: 1089;display: none"></div>
+	<div id="drawer1" class="col-xs-9 height" style="background: rgba(102,178,229,1);z-index: 1090;left: 0;position: fixed;top:0;bottom:0;">
+			<div class="panel panel-default drawer-li">
+				<!--教师端-->
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-tag"></span> 共发布作业： 次
+				</div>
+
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-home"></span>
+					<a href="">首页</a>
+				</div>
+			</div>
+			<div class="panel panel-default drawer-li"></div>
+			<div class="panel panel-default drawer-li">
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-cloud-upload"></span>
+					<a href="">发布作业</a>
+				</div>
+			</div>
+			<div class="panel panel-default drawer-li">
+				<div class="panel-body">
+					'<span class="glyphicon glyphicon-th-list"></span>
+					<a href="">作业列表</a>
+				</div>
+			</div>
+			<div class="panel panel-default drawer-li">
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-file"></span>
+					<a href="">作业库</a>
+				</div>
+			</div>
+			<div class="panel panel-default drawer-li" style="position:absolute;bottom:0;float: right;margin-bottom:0;margin-left: 59%" >
+				<div class="panel-body" style="float: right">
+					<span class="glyphicon glyphicon-home"></span>
+					<a href="">返回首页</a>
+				</div>
+			</div>
+	</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+</body>
+
+</html>

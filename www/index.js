@@ -33,3 +33,9 @@ $("#login2").click(function(){
 
 	})
 });
+$("#redirect").click(function(){
+	$.post('/api/test2',function(res){
+		console.log(res);
+		console.log("页面已经跳转");
+	});
+});

@@ -1,6 +1,14 @@
-
+var userid;
 $(function(){
-	$.post('/homework/api/kecheng',function(res){
+	$.post('/../../start/api/getMyInfo',function (res) {
+		console.log('>>>',res);
+		if(res.text=='没找到您的登录信息，请重新登陆或注册.'){
+			alert("没找到您的登录信息，请重新登陆或注册.");
+			window.location.href='http://m.xmgc360.com/start/web/account/'
+		}
+		userid=res.data['id'];
+	});
+	$.post('/api/kecheng',function(res){
 //	console.log(">>>",res[1],res.length);
 	for(var attr in res){
 		var data=res[attr];
@@ -10,7 +18,7 @@ $(function(){
 		$('#Sselect').append(option);
 	}
 })
-})
+});
 $('#shangchuan').click(function () {
     _fns.uploadFile2($('#shangchuan'), function (f) {
         console.log('>>>>before:', f);
@@ -50,7 +58,7 @@ $('#up').click(function(){
 	alert('请选择课程！');
 	return 0;
 	}
-	$.post('/homework/api/addwork',dat,function(res){
+	$.post('/api/addwork',dat,function(res){
 		if(res==1){
 			alert('作业发布成功');
 			window.location.href='http://m.xmgc360.com/homework/web/teacherPage/mywork.html';
@@ -60,4 +68,4 @@ $('#up').click(function(){
 
 		}
 	})
-})
+});

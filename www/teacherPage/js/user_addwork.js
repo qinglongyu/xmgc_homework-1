@@ -8,7 +8,7 @@ $(function(){
 		}
 		userid=res.data['id'];
 	});
-	$.post('/api/kecheng',function(res){
+	$.post('/homework/api/kecheng',function(res){
 //	console.log(">>>",res[1],res.length);
 	for(var attr in res){
 		var data=res[attr];
@@ -58,7 +58,7 @@ $('#up').click(function(){
 	alert('请选择课程！');
 	return 0;
 	}
-	$.post('/api/addwork',dat,function(res){
+	$.post('/homework/api/addwork',dat,function(res){
 		if(res==1){
 			alert('作业发布成功');
 			window.location.href='http://m.xmgc360.com/homework/web/teacherPage/mywork.html';

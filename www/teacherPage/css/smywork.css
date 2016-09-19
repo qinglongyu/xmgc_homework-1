@@ -1,0 +1,74 @@
+/*.contain{*/
+/*position: absolute;*/
+/*}*/
+body{
+    /*padding-top: 45px;*/
+}
+._nav{
+    min-height: 40px;!important;
+    width: 100%;
+    background-color: rgba(255,255,255,0.4);
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.worklist{
+    /*margin-top: 10%;*/
+}
+.worklist li {
+    background-color:rgba(255,255,255,0.2);
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    border: none;
+    margin: 15px 2%;
+    clear: both;
+}
+.list-group-item p{
+    width:32%;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color:white;
+}
+#myDiv1{
+width: 46%;
+height:120px;
+line-height: 120px;
+float:left;
+    background-color:rgba(255,255,255,0.2);
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    margin: 15px 2%;
+}
+.myDiv2{
+width:46%;
+height:55px;
+line-height:55px;
+float:left;
+    background-color:rgba(255,255,255,0.2);
+    font-size: 20px;
+    text-align: center;
+    border: none;
+}
+#myDiv a {
+    color: white;
+}
+._nav{
+    min-height: 40px;!important;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /*text-align: center;*/
+    display: inline-block;
+    margin: 0;
+}
+

@@ -41,6 +41,7 @@ function handleError () {
             console.log('The solution is: ', rows[0].solution);
         });
     },3600000);
+
     console.log('mysql ready!');
 
     wrapperedConn = wrapper(conn);

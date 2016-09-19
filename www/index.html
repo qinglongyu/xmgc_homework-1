@@ -1,99 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Signin Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>First page</title>
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
-    <!-- Custom styles for this template -->
-
-
+	<link href='../public/css/bootstrap.css' rel="stylesheet">
 	<style>
-	body {
-		  padding-top: 40px;
-		  padding-bottom: 40px;
-		  background-color: #eee;
+		* {
+			color: aliceblue
 		}
 
-		.form-signin {
-		  max-width: 330px;
-		  padding: 15px;
-		  margin: 0 auto;
+		.user_fk {
+			border-radius: 6px;
+			height: 150px;
+			background: rgba(0, 0, 255, 0.0);
+			-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+			box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
 		}
-		.form-signin .form-signin-heading,
-		.form-signin .checkbox {
-		  margin-bottom: 10px;
-		}
-		.form-signin .checkbox {
-		  font-weight: normal;
-		}
-		.form-signin .form-control {
-		  position: relative;
-		  height: auto;
-		  -webkit-box-sizing: border-box;
-			 -moz-box-sizing: border-box;
-				  box-sizing: border-box;
-		  padding: 10px;
-		  font-size: 16px;
-		}
-		.form-signin .form-control:focus {
-		  z-index: 2;
-		}
-		.form-signin input[type="email"] {
-		  margin-bottom: -1px;
-		  border-bottom-right-radius: 0;
-		  border-bottom-left-radius: 0;
-		}
-		.form-signin input[type="password"] {
-		  margin-bottom: 10px;
-		  border-top-left-radius: 0;
-		  border-top-right-radius: 0;
-}
 	</style>
-  </head>
+</head>
 
-  <body>
+<body background="teacherPage/images/1.png">
 
-    <div class="container">
+	<div class="container-fluid">
+		<nav class="nav navbar navbar-default" style="margin:-5px -15px 0;min-height:40px;">
+			<img src="teacherPage/images/logo.png" alt="" style="top: 5px;left:10px;
+    position: relative;">
 
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input id="account" type="number" class="form-control" placeholder="Phone number" required autofocus>
-        <input id="password" type="password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-		  <button type='submit' class="btn btn-lg btn-primary btn-block"  id="login">Sign in</button>
-		  <div class="btn btn-lg btn-primary btn-block"  id="login2">XSign in</div>
-      </form>
-		<div class="row">
-			<button class="btn btn-danger"><span><a href="teacherPage/addwork.html" style="color:white;">发布作业</a></span></button>
-			<button class="btn btn-primary"><span><a href="teacherPage/mywork.html" style="color:white;">我的作业</a></span></button>
-			<button class="btn btn-info"><span><a href="teacherPage/worklist.html" style="color:white;">作业列表</a></span></button>
-			<button class="btn btn-success"><span><a href="teacherPage/user_sIframePage.html" style="color:white;">作业详情</a></span></button>
-			<button class="btn btn-warning"><span><a href="teacherPage/user_tCheckPage.html" style="color:white;">批改作业</a></span></button>
-			<button class="btn btn-success"><span><a href="teacherPage/work-repository.html" style="color:white;">作业仓库</a></span></button>
-			<button class="btn btn-danger"><span><a href="teacherPage/admin.html" style="color:white;">管理员</a></span></button>
-			<button class="btn btn-primary"><span><a href="teacherPage/discuss.html" style="color:white;">讨论管理</a></span></button>
-			<button class="btn btn-info"><span><a href="teacherPage/hwlist.html" style="color:white;">作业管理</a></span></button>
-			<div class="btn btn-primary" id='ceshi'><a href="/homework/api/html" style="color:white">接口测试</a></div>
+
+		</nav>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin:0px -15px 0;">
+			<!-- Indicators -->
+			<ol class="carousel-indicators" style="width:20%;margin-left:30%;">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox" style="height:150px;">
+				<div class="item active">
+					<img src="teacherPage/images/JX124.jpg" alt="first">
+					<div class="carousel-caption">
+						...
+					</div>
+				</div>
+				<div class="item">
+					<img src="teacherPage/images/JX125.jpg" alt="second">
+					<div class="carousel-caption">
+						...
+					</div>
+				</div>
+				<div class="item">
+					<img src="teacherPage/images/JX131.jpg" alt="third">
+					<div class="carousel-caption">
+						...
+					</div>
+				</div>
+
+			</div>
+
 		</div>
-    </div> <!-- /container -->
+		<div class="row" style="margin-top:20px;">
+			<div class="col-xs-3 text-center">
+				<a href=""><img class="img-circle" src="teacherPage/images/rsp.png" alt="作业仓库" style="height:40px;background:#5fb9af;">
+				<p>作业仓库</p></a>
+			</div>
+			<div class="col-xs-3 text-center" style="display:">
+				<a href=""><img class="img-circle" src="teacherPage/images/noup.png" alt="未提交" style="height:40px;background:#de8f55;">
+				<p>未提交</p></a>
+			</div>
+			<div class="col-xs-3 text-center">
+				<a href=""><img class="img-circle" src="teacherPage/images/up.png" alt="已发布" style="height:40px;background:#90cfc7;">
+				<p>已发布</p></a>
+			</div>
+			<div class="col-xs-3 text-center">
+				<a href=""><img class="img-circle" src="teacherPage/images/aw.png" alt="发布作业" style="height:40px;background:#607154;">
+				<p>发布作业</p></a>
+			</div>
+			<div class="col-xs-3 text-center">
+				<a href=""><img class="img-circle" src="teacherPage/images/all.png" alt="我的作业" style="height:40px;background:#2f534c;">
+				<p>我的作业</p></a>
+			</div>
+			<div class="col-xs-3 text-center">
+				<a href=""><img class="img-circle" src="teacherPage/images/news.png" alt="公告" style="height:40px;background:#687967;">
+				<p>公告</p></a>
+			</div>
+		</div>
+		<div class="row">
+			<h4 style="margin-left:15px">优秀作业</h4>
+		</div>
+		<div class="row" style="margin:0 0 0 0;">
+			<div class="col-xs-5 user_fk" style="background-image: url(teacherPage/images/fk.jpg);position:relative;overflow:hidden;">
+				<h3>作业标题</h3>
+				<div style="width:100%;height:50%;position:absolute;left:0;top:50%;background:rgba(255,255,255,0.3);z-index:20;">
+					<p style="margin:10px 0 0 15px;">By:<i id='author'>作者</i></p>
+
+					<p style="margin:10px 0 0 15px;">已有<i id=''>多少人</i>完成</p>
+				</div>
+			</div>
+
+			<div class="col-xs-5 user_fk pull-right" style="background-image: url(teacherPage/images/fk.jpg);position:relative;overflow:hidden;">
+				<h3>作业标题</h3>
+				<div style="width:100%;height:50%;position:absolute;left:0;top:50%;background:rgba(255,255,255,0.3);z-index:20;">
+					<p style="margin:10px 0 0 15px;">By:<i>作者</i></p>
+
+					<p style="margin:10px 0 0 15px;">已有<i>多少人</i>完成</p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin:20px 0 0 0;">
+			<div class="col-xs-5 user_fk" style="background-image: url(teacherPage/images/fk.jpg);position:relative;overflow:hidden;">
+				<h3>作业标题</h3>
+				<div style="width:100%;height:50%;position:absolute;left:0;top:50%;background:rgba(255,255,255,0.3);z-index:20;">
+					<p style="margin:10px 0 0 15px;">By:<i>作者</i></p>
+
+					<p style="margin:10px 0 0 15px;">已有<i>多少人</i>完成</p>
+				</div>
+			</div>
+
+			<div class="col-xs-5 user_fk pull-right" style="background-image: url(teacherPage/images/fk.jpg);position:relative;overflow:hidden;">
+				<h3>作业标题</h3>
+				<div style="width:100%;height:50%;position:absolute;left:0;top:50%;background:rgba(255,255,255,0.3);z-index:20;">
+					<p style="margin:10px 0 0 15px;">By:<i>作者</i></p>
+
+					<p style="margin:10px 0 0 15px;">已有<i>多少人</i>完成</p>
+				</div>
+			</div>
+		</div>
 
 
+		<div class="row" style="margin:20px auto;">
+			<div class="col-xs-3 text-center" style="border-right:1px solid white;border-left:1px solid white;vertical-align:middle;">
+				<a href="" style="color:white;font-size:0.7em;"><span style="line-height:20px">所有作业</span></a>
+			</div>
+			<div class="col-xs-3 text-center" style="border-right:1px solid white;vertical-align:middle;">
+				<a href="" style="color:white;font-size:0.7em;"><span style="line-height:20px">帮助支持</span></a>
+			</div>
+			<div class="col-xs-3 text-center" style="border-right:1px solid white;vertical-align:middle;">
+				<a href="" style="color:white;font-size:0.7em;"><span style="line-height:20px">关于我们</span></a>
+			</div>
+			<div class="col-xs-3 text-center" style="border-right:1px solid white;vertical-align:middle;">
+				<a href="login.html" style="color5:white;font-size:0.7em;"><span style="line-height:20px">后台管理</span></a>
+			</div>
+		</div>
+
+		<div class="footer text-center">
+			<p>&copy; Company 2014</p>
+		</div>
+
+	</div>
+	<!-- /container -->
 	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="md5.js"></script>
-	<script src="index.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  </body>
+	<script>
+	</script>
+</body>
+
 </html>

@@ -47,15 +47,19 @@
         <div class="form-group">
             <p class="panel-title"><span>截止提交日期：</span><span>2016.08.29</span></p>
         </div>
-        <button type="submit" class="btn btn-primary pull-right" style="margin-bottom:15px;margin-right: 5px">加入我的作业</button>
+        <div type="submit" id="add" class="btn btn-primary pull-right" style="margin-bottom:15px;margin-right: 5px">领取作业</div>
         <button  class="btn btn-danger pull-right" style="margin-right:5px">返回</button>
     </form>
 </div>
-
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="../../public/js/jquery.js"></script>
 <script src="../../public/js/bootstrap.js"></script>
+<script>
+    $("#add").click(function(){
+        alert("成功领取该作业！");
+    });
+</script>
 <!--载入侧边栏导航-->
 <script src="js/nav.js"></script>
 <!--<script src="user_nav.js"></script>-->

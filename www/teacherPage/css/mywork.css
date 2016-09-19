@@ -18,13 +18,14 @@ body{
     /*margin-top: 10%;*/
 }
 .worklist li {
-    background-color:rgba(72,115,255,0.2);
+    background-color:rgba(255,255,255,0.3);
     font-size: 20px;
     line-height: 40px;
     text-align: center;
     border: none;
     margin: 15px;
-    box-shadow: 5px 5px 5px rgba(255,255,255,0.4);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+    color: white;
 }
 .worklist li a {
     color: white;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
@@ -11,44 +12,66 @@
     <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">-->
 
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/smywork.css">
 
     <!-- 可选的Bootstrap主题文件（一般不用引入） -->
     <link rel="stylesheet" href="../../public/css/bootstrap-theme.min.css">
 </head>
 
-<body  background="images/1.png">
-<!--<div id="contain">-->
-<nav class="nav navbar" style="position: absolute;">
-    <h4 style="color: white;margin-left: 20px"><span id="pull" class="glyphicon glyphicon-align-justify"></span></h4>
-</nav>
+<body style="background: url('images/index2.jpg') no-repeat center fixed;background-size: 100% 100%">
+    <!--<div id="contain">-->
+    <nav class="nav navbar" style="position: absolute;">
+        <h4 style="color: white;margin-left: 20px"><span id="pull" class="glyphicon glyphicon-align-justify"></span></h4>
+    </nav>
 
     <div class="col-xs-10" style="padding-left: 5px;padding-right: 5px;position:absolute;top:45px;margin-left:8%;" id="myDiv">
-        <a href="#"><div id="myDiv1">全部作业</div></a>
-            <a href="#"><div class="myDiv2" style="margin:15px 2% 4px 2%;">已提交</div></a>
-                <a href="#"><div class="myDiv2" style="margin:5px 2% 15px 2%;">未提交</div></a>
-        <ul class="list-group worklist" >
-            <a href="#"><li class="list-group-item" id="myLi1">
-                <p>title</p>
-                <p>author</p>
-                <p>date</p>
-            </li></a>
-        </ul>
+        <a href="#">
+            <div id="myDiv1" class="btn">全部作业</div>
+        </a>
+        <a href="#">
+            <div class="myDiv2 btn" style="margin-top:15px">已提交</div>
+        </a>
+        <a href="#">
+            <div class="myDiv2 btn" style="margin-top:5px">未提交</div>
+        </a>
+
+        <table class="table" style="color:white;text-align:center">
+            <tr>
+                <td>作业标题</td>
+                <td>截止日期</td>
+                <td>操作</td>
+            </tr>
+            <tr>
+                <td>html作业1</td>
+                <td>2016/09/19</td>
+                <td>
+                    <div class="btn btn-info"><a href="./user_sIframePage.html">提交</a></div>
+                </td>
+            </tr>
+            <tr>
+                <td>html作业2</td>
+                <td>2016/09/19</td>
+                <td>
+                    <div class="btn btn-info"><a href="./user_sIframePage.html">提交</a></div>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <!--<nav class="_nav navbar navbar-fixed-bottom" style="margin-bottom: 0">底部导航</nav>-->
 
 
 
-<!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入 &ndash;&gt;-->
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入 &ndash;&gt;-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
-<!--&lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件 &ndash;&gt;-->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--&lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件 &ndash;&gt;-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
     <script src="js/smywork.js"></script>
-<script src="js/nav.js"></script>
+    <script src="js/nav.js"></script>
 
 </body>
+
 </html>

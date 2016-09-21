@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
-    <title>HTML作业</title>
-    <!--&lt;!&ndash; 新 Bootstrap 核心 CSS 文件 &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
+	<title>HTML作业</title>
+	<!--&lt;!&ndash; 新 Bootstrap 核心 CSS 文件 &ndash;&gt;-->
+	<!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
 
-    <!--&lt;!&ndash; 可选的Bootstrap主题文件（一般不用引入） &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">-->
+	<!--&lt;!&ndash; 可选的Bootstrap主题文件（一般不用引入） &ndash;&gt;-->
+	<!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">-->
 
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mywork.css">
+	<link rel="stylesheet" href="css/mywork.css">
 
-    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="../../public/css/bootstrap-theme.min.css">
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="/../../public/css/bootstrap-theme.min.css">
 </head>
 
-<body  background="images/1.png">
-<!--<div id="contain">-->
-<nav class="nav navbar" style="position: absolute;">
-    <h4 style="color: white;margin-left: 20px;"><span id="pull" class="glyphicon glyphicon-align-justify"></span></h4>
-</nav>
+<body background="images/1.png">
+	<!--<div id="contain">-->
+	<nav class="nav navbar" style="position: absolute;">
+		<h4 style="color: white;margin-left: 20px;"><span id="pull" class="glyphicon glyphicon-align-justify"></span></h4>
+	</nav>
 
-    <div class="col-xs-10" style="padding-left: 5px;padding-right: 5px;position:absolute;top:45px;margin-left:8%;">
-        <ul class="list-group worklist" >
-            <li class="list-group-item myWork">HTML_work1</li>
-        </ul>
-    </div>
+	<div ng-controller='worklist' class="col-xs-10" style="padding-left: 5px;padding-right: 5px;position:absolute;top:45px;margin-left:8%;">
+		<ul class="list-group worklist">
+			<li class="list-group-item myWork">
+				<span value='number' style='display:none'>题号</span>
+				<span>HTML_work1</span>
+			</li>
+		</ul>
+	</div>
 
-    <!--<nav class="_nav navbar navbar-fixed-bottom" style="margin-bottom: 0">底部导航</nav>-->
+	<!--<nav class="_nav navbar navbar-fixed-bottom" style="margin-bottom: 0">底部导航</nav>-->
 
 
 
-<!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入 &ndash;&gt;-->
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入 &ndash;&gt;-->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
-<!--&lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件 &ndash;&gt;-->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<!--&lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件 &ndash;&gt;-->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
+	<!--	载入是否登录验证-->
+	<script src="js/nav.js"></script>
+	<script src="js/mywork.js"></script>
 
-    <script src="js/mywork.js"></script>
-<script src="js/nav.js"></script>
+	<script>
+	</script>
 
 </body>
+
 </html>

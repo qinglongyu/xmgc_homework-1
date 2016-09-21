@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
+
 <head>
-    <meta charset="UTF-8">
-    <title>作业编辑</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link href="css/user_sEditorPage.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<title>作业编辑</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link href="css/user_sEditorPage.css" rel="stylesheet" />
 </head>
-<body style="position: absolute;top: 40px;">
-<article>
-    <div class="panel panel-default">
-        <div class="panel-title" style="text-align: center;margin:10px 0 0 0;">
-            <p>html第一章</p>
-        </div>
-        <div class="panel-body">
-            <p>完成ppt上的课后练习及利用今天所学知识制作一个人主页，风格不限</p>
-        </div>
-        <form role="form" >
-                <div class="form-group  col-xm-10 col-sm-12 media">
-                    <textarea class="form-control" rows="3" placeholder="作业答案..."></textarea>
-                </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile" class="col-sm-3 col-md-3 col-lg-3 control-label">选择文件：</label>
-                        <input type="file" id="exampleInputFile" >
-                    </div>
-                   <div class="form-group  col-xm-10 col-sm-12 media" >
-                    <button type="button" class="btn btn-primary btn-md btn-block" id="submit">提交</button>
-                    <input type="reset" class="btn btn-danger btn-md btn-block" value="重置" />
-                </div>
-        </form>
-        </div>
-</article>
+
+<body style="position: absolute;top: 40px;width:100%;height:100%;">
+	<article>
+		<div class="panel panel-default">
+			<div class="panel-title" style="text-align: center;margin:10px 0 0 0;">
+				<p>html第一章</p>
+			</div>
+			<div class="panel-body">
+				<p>完成ppt上的课后练习及利用今天所学知识制作一个人主页，风格不限</p>
+			</div>
+			<form role="form">
+				<div class="form-group  col-xm-10 col-sm-12 media">
+					<textarea class="form-control" rows="3" placeholder="作业答案..."></textarea>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputFile" class="col-sm-3 col-md-3 col-lg-3 control-label">选择文件：</label>
+					<input type="file" id="exampleInputFile">
+				</div>
+				<div class="form-group  col-xm-10 col-sm-12 media">
+					<button type="button" class="btn btn-primary btn-md btn-block" id="submit">提交</button>
+					<input type="reset" class="btn btn-danger btn-md btn-block" value="重置" />
+				</div>
+			</form>
+		</div>
+	</article>
 	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
+	<!--	载入是否登录验证-->
+	<script src="js/check.js"></script>
 	<script src="js/user_sEditorPage.js"></script>
 </body>
+
 </html>

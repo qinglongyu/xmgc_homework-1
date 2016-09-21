@@ -13,13 +13,13 @@ var $koa = global.$koa = require('koa');
 var $router = global.$router = require('koa-router');
 var $bodyParser = global.$bodyParser = require('koa-bodyparser');
 var $mysql = global.$mysql = require('mysql');
-var $crypto =global.$crypto = require('crypto');
+var $crypto = global.$crypto = require('crypto');
 //自定义库引入
 global._cfg = require('./my_modules/cfg.js');
 global._ctnu = require('./my_modules/ctnu.js');
 global._fns = require('./my_modules/fns.js');
 global._rotr = require('./my_modules/rotr.js');
-global._mysql = require('./my_modules/mysql.js');
+//global._mysql = require('./my_modules/mysql.js');
 global._Mysql = require('./my_modules/mysql_.js');
 
 
@@ -29,23 +29,19 @@ var httpSvr = _app.httpSvr = $http.createServer(koaSvr.callback());
 
 //读取外部xcfg文件写入_xfg全局参数
 (function () {
-    _app.httpSvr.listen(_app.hostPort);
-    __infohdlr('Server is running on:' + _app.hostPort + '!');
+	_app.httpSvr.listen(_app.hostPort);
+	__infohdlr('Server is running on:' + _app.hostPort + '!');
 })();
 
 //使用body解析器
 koaSvr.use($bodyParser({
-    onerror: function (err, ctx) {
-        ctx.request.body = undefined;
-        __errhdlr(err);
-    }
+	onerror: function (err, ctx) {
+		ctx.request.body = undefined;
+		__errhdlr(err);
+	}
 }));
 
 //http请求的路由控制
 koaSvr.use(_rotr.routes());
 
 koaSvr.use(require('koa-static')('www'));
-
-
-
-

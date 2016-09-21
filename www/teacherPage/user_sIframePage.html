@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
 
 <head>
-    <meta charset="UTF-8">
-    <title>作业详情</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user_sIframePage.css">
+	<meta charset="UTF-8">
+	<title>作业详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/user_sIframePage.css">
 
 </head>
 
 <body>
-    <header class="" style="position:fixed;width:100%;z-index: 1090">
-        <span id='pull' class="glyphicon glyphicon-align-justify"></span>
-        <h3>html_test1</h3>
-    </header>
-    <article style="position:absolute;top:40px;">
-        <div id="myDiv" style="position: fixed;z-index: 1089">
-            <ul class="nav nav-tabs nav-justified1" role="tablist">
-                <li role="presentation" class="myLi active"><a href="user_sWorkDetailPage.html" target="myIframe">作业详情</a></li>
+	<header class="" style="position:fixed;width:100%;z-index: 1090">
+		<span id='pull' class="glyphicon glyphicon-align-justify"></span>
+		<h3>html_test1</h3>
+	</header>
+	<article style="position:absolute;top:40px;">
+		<div id="myDiv" style="position: fixed;z-index: 1089">
+			<ul class="nav nav-tabs nav-justified1" role="tablist">
+				<li role="presentation" class="myLi active"><a href="user_sWorkDetailPage.html" target="myIframe">作业详情</a></li>
 
-                <!--学生端-->
-                <li id="student" role="presentation" class="myLi"><a href="user_sEditorPage.html" target="myIframe">编辑作业</a></li>
-
-
-                <!--教师端-->
-                <!--            <li id="teacher" role="presentation" class="myLi"><a href="studentswork.html" target="myIframe">学生作业</a></li>-->
+				<!--学生端-->
+				<!--                <li id="student" role="presentation" class="myLi"><a href="user_sEditorPage.html" target="myIframe">编辑作业</a></li>-->
 
 
-                <li role="presentation" class="myLi"><a href="user_sChatPage.html" target="myIframe">作业讨论区</a></li>
-            </ul>
-        </div>
-        <!--<div id="myDiv1" style="position: absolute;"></div>-->
-        <iframe src="user_sWorkDetailPage.html" name="myIframe" scrolling="auto" frameborder="0" width="100%" height="80%"></iframe>
+				<!--教师端-->
+				<li id="teacher" role="presentation" class="myLi"><a href="studentswork.html" target="myIframe">学生作业</a></li>
 
-    </article>
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/user_sIframePage.js"></script>
-    <script src="js/nav.js"></script>
+
+				<li role="presentation" class="myLi"><a href="user_sChatPage.html" target="myIframe">作业讨论区</a></li>
+			</ul>
+		</div>
+		<!--<div id="myDiv1" style="position: absolute;"></div>-->
+		<iframe src="user_sWorkDetailPage.html" name="myIframe" scrolling="auto" frameborder="0" width="100%" height="80%"></iframe>
+
+	</article>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
+	<!--	载入是否登录验证-->
+	<script src="js/check.js"></script>
+	<script src="js/user_sIframePage.js"></script>
+	<script src="js/nav.js"></script>
 </body>
 
 </html>

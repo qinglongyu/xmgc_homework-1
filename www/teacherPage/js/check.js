@@ -8,6 +8,6 @@ $.post('/../../start/api/getMyInfo',function (res) {
 		}
 		userid=res.data['id'];
 		nick=res.data['nick'];
-		console.log(">>>userid:",userid);
-		console.log(">>>nick:",nick);
+//		console.log(">>>userid:",userid);
+//		console.log(">>>nick:",nick);
 	})

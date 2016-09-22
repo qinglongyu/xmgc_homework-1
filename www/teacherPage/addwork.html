@@ -19,7 +19,7 @@
 	</nav>
 
 	<!-- 主题内容 -->
-	<div class="container" style="width:85%;background-color:rgba(255,255,255,0.2);margin-bottom:30px;margin-top: 60px;margin-left:28px;position: absolute;z-index: 50;">
+	<div class="container" ng-controller='upcontroller' style="width:85%;background-color:rgba(255,255,255,0.2);margin-bottom:30px;margin-top: 60px;margin-left:28px;position: absolute;z-index: 50;">
 		<form role="form">
 			<div class="form-group">
 				<label for="title" class="title">标题</label>
@@ -31,8 +31,9 @@
 			</div>
 			<div class="form-group">
 				<label for="" class="title">课程</label>
-				<select class="form-control" style="text-align:center" name="" id="Sselect">
+				<select ng-controller='class' class="form-control" style="text-align:center" name="" id="Sselect">
 					<option id='option' value="请选择" class="">请选择...</option>
+					<option ng-repeat="class in classes" value="{{class.name}}" class="">{{class.name}}</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -63,11 +64,18 @@
 				<a id='wenjian' href='' style="display:none;">.....</a>
 			</div>
 
-			<div id="up" class="btn btn-primary pull-right" style="margin-bottom:15px;">提交</div>
+			<div id="up" class="btn btn-primary pull-right" style="margin-bottom:15px;">
+				<span ng-click="check()">提交</span>
+			</div>
 			<button type="reset" class="btn btn-danger pull-right" style="margin-right:50px">重置</button>
 		</form>
-
+		<div id="boxshow" class="text-center" style="width:77%;margin-top:5px;height:30px;background:rgba(0,0,0,0.3);position:fixed;top:-50px;">
+			<span style="color:white;height:30px;line-height:30px;font-size:13px;">
+			提示：<span ng-bind='text'></span>
+			</span>
+		</div>
 	</div>
+
 	<!--&lt;!&ndash;-->
 
 
@@ -77,8 +85,6 @@
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script src="//cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
 	<script src="http://m.xmgc360.com/pie/web/js/common.js"></script>
-	<!--	载入是否登录验证-->
-	<script src="js/check.js"></script>
 	<!--载入侧边栏导航-->
 	<script src="js/nav.js"></script>
 	<!--上传js-->

@@ -16,7 +16,7 @@
 		<!--顶部按钮-->
 		<span class="btn glyphicon glyphicon-align-justify" style="position:absolute;top: 3px;color: white" id='pull'></span>
 		<div style="position:absolute;left: 35px;top: 3px;color:white;margin: 0 auto;width: 100px;display: inline-block;line-height: 40px;">
-			<h4>作业仓库</h4></div>
+			<h4>作业详情</h4></div>
 	</nav>
 	<!-- 大标题-->
 
@@ -25,29 +25,30 @@
 
 		<form style="margin-top:20px;line-height: 35px" class="" role="form">
 			<div class="form-group">
-				<p class="panel-title"><span>标题：</span><span>html_test1</span></p>
+				<p class="panel-title"><span>标题：</span><span>{{$root.workinfo.title}}</span></p>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>课程：</span><span>html</span></p>
+				<p class="panel-title"><span>课程：</span><span>{{$root.workinfo.cname}}</span></p>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>章节：</span><span style="font-weight: bold">第一章</span></p>
+				<p class="panel-title"><span>章节：</span><span style="font-weight: bold">第<span>{{$root.workinfo.section}}</span>章</span>
+				</p>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>发布人：</span><span>alex</span></p>
+				<p class="panel-title"><span>发布人：</span><span>{{$root.workinfo.xname}}</span></p>
 			</div>
 			<div class="form-group">
 				<label for="content">内容：</label>
-				<textarea rows=5 cols="1" class="form-control" disabled id="content" placeholder="Content" style="height:80px"></textarea>
+				<textarea rows=5 cols="1" class="form-control" disabled id="content" placeholder="Content" style="height:80px">{{$root.workinfo.content}}</textarea>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>查看文件：</span><span>fileName</span></p>
+				<p class="panel-title"><span>查看文件：</span><span>{{$root.workinfo.annex}}</span></p>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>发布日期：</span><span>2016.08.29</span></p>
+				<p class="panel-title"><span>发布日期：</span><span>{{$root.workinfo.creatdate}}</span></p>
 			</div>
 			<div class="form-group">
-				<p class="panel-title"><span>截止提交日期：</span><span>2016.08.29</span></p>
+				<p class="panel-title"><span>截止提交日期：</span><span>{{$root.workinfo.enddate}}</span></p>
 			</div>
 			<div type="submit" id="add" class="btn btn-primary pull-right" style="margin-bottom:15px;margin-right: 5px">领取作业</div>
 			<button class="btn btn-danger pull-right" style="margin-right:5px">返回</button>
@@ -56,17 +57,9 @@
 	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script src="//cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
-	<!--	载入是否登录验证-->
-	<script src="js/check.js"></script>
-	<script>
-		$("#add").click(function () {
-			alert("成功领取该作业！");
-		});
-	</script>
 	<!--载入侧边栏导航-->
 	<script src="js/nav.js"></script>
-	<!--<script src="user_nav.js"></script>-->
-
+	<script src="js/kuWorkDetail.js"></script>
 </body>
 
 </html>

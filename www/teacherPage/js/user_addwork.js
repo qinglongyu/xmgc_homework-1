@@ -1,24 +1,4 @@
-var userid;
-$(function () {
-	$.post('/../../start/api/getMyInfo', function (res) {
-		console.log('>>>', res);
-		if (res.text == '没找到您的登录信息，请重新登陆或注册.') {
-			alert("没找到您的登录信息，请重新登陆或注册.");
-			window.location.href = 'http://m.xmgc360.com/start/web/account/'
-		}
-		userid = res.data['id'];
-	});
-	$.post('/homework/api/kecheng', function (res) {
-		//	console.log(">>>",res[1],res.length);
-		for (var attr in res) {
-			var data = res[attr];
-			var option = $("#option").clone(true, true);
-			option.html(data.name);
-			option.attr('value', data.name);
-			$('#Sselect').append(option);
-		}
-	})
-});
+//	附件上传
 $('#shangchuan').click(function () {
 	_fns.uploadFile2($('#shangchuan'), function (f) {
 		console.log('>>>>before:', f);
@@ -34,42 +14,59 @@ $('#shangchuan').click(function () {
 	});
 });
 
-$('#up').click(function () {
-	var dat = {
-		useid: userid,
-		title: $('#title').val(),
-		content: $('#content').val(),
-		Sselect: $('#Sselect').val(),
-		section: $('#section').val(),
-		mark: $('#mark').val(),
-		wenjian: $('#wenjian').html(),
-		time: $('#time').val()
-	};
-	console.log(">>>>", dat);
 
-	if (dat.title == '') {
-		alert('请输入标题！');
-		return 0;
-	}
-	if (dat.content == '') {
-		alert('请输入内容！');
-		return 0;
-	}
-	if (dat.Sselect == "请选择") {
-		alert('请选择课程！');
-		return 0;
-	}
-	if (dat.time == '') {
-		alert("请选择作业截至提交日期！");
-		return 0;
-	}
-	$.post('/homework/api/addwork', dat, function (res) {
-		if (res == 1) {
-			alert('作业发布成功');
-			window.location.href = 'http://m.xmgc360.com/homework/web/teacherPage/mywork.html';
-		} else {
-			alert("作业发布失败，请检查格式！");
-
-		}
+//课程加载控制器
+app.controller('class', function ($scope) {
+	$.post('/homework/api/kecheng', function (res) {
+		$scope.$apply(function () {
+			$scope.classes = res;
+		})
 	})
 });
+app.controller('upcontroller', function ($scope) {
+	$scope.check = function () {
+		var dat = {
+			useid: userid,
+			title: $('#title').val(),
+			content: $('#content').val(),
+			Sselect: $('#Sselect').val(),
+			section: $('#section').val(),
+			mark: $('#mark').val(),
+			wenjian: $('#wenjian').html(),
+			time: $('#time').val()
+		};
+		console.log(">>>>", dat);
+		$.post('/homework/api/addwork', dat, function (res) {
+			console.log(">>>>res", res);
+			//	发布成功，提示用户并跳转
+			if (res.code == 1) {
+				$scope.$apply(function () {
+					$scope.text = '作业发布成功'
+				});
+				boxshow();
+				setTimeout(function () {
+					window.location.href = 'http://m.xmgc360.com/homework/web/teacherPage/mywork.html';
+				}, 1500);
+			}
+			//	发布失败，显示提示框
+			else {
+				$scope.$apply(function () {
+					$scope.text = res.text
+				});
+				boxshow();
+			}
+		})
+	};
+});
+//页面提示动画函数
+function boxshow() {
+	$('#boxshow').animate({
+		top: 0
+	}, 500, function () {
+		setTimeout(function () {
+			$('#boxshow').animate({
+				top: -50
+			}, 500)
+		}, 1000)
+	})
+};

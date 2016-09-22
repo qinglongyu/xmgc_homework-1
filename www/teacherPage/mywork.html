@@ -27,9 +27,9 @@
 
 	<div ng-controller='worklist' class="col-xs-10" style="padding-left: 5px;padding-right: 5px;position:absolute;top:45px;margin-left:8%;">
 		<ul class="list-group worklist">
-			<li class="list-group-item myWork">
-				<span value='number' style='display:none'>题号</span>
-				<span>HTML_work1</span>
+			<li ng-repeat='(key,value) in worklists' ng-click="jump()" class="list-group-item myWork">
+				<a href="kuWorkDetail.html?wid={{value.wid}}"><span value='{{value.wid}}' style='display:none'>{{value.wid}}</span>
+				<span>{{value.title}}</span></a>
 			</li>
 		</ul>
 	</div>

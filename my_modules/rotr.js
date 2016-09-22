@@ -196,7 +196,7 @@ _rotr.apis.login = function () {
 
 
 
-		ctx.body = res;
+		ctx.body = __newMsg(1, 'ok', res);
 		return ctx;
 	});
 	return co;
@@ -208,7 +208,7 @@ _rotr.apis.kecheng = function () {
 
 		var sqlstr = "select name from course_info;";
 		var rows = yield _ctnu([_Mysql.conn, 'query'], sqlstr);
-		//		console.log(">>>>",rows);
+		console.log(">>>>", rows);
 		ctx.body = rows;
 		return ctx;
 	});
@@ -220,22 +220,33 @@ _rotr.apis.addwork = function () {
 	var co = $co(function* () {
 		var userid = ctx.query.useid || ctx.request.body.useid;
 		var title = ctx.query.title || ctx.request.body.title;
+		if (!title) throw Error('标题格式不正确');
+
 		var content = ctx.query.content || ctx.request.body.content;
+		if (!content) throw Error('内容格式不正确');
+
 		var Sselect = ctx.query.Sselect || ctx.request.body.Sselect;
+		if (!Sselect) throw Error('课程格式不正确');
+
 		var section = ctx.query.section || ctx.request.body.section;
+		if (!section) throw Error('章节格式不正确');
+
 		var mark = ctx.query.mark || ctx.request.body.mark;
 		var annex = ctx.query.wenjian || ctx.request.body.wenjian;
+
+		var time = ctx.query.time || ctx.request.body.time;
+		if (!time) throw Error('截止时间格式不正确');
 
 
 		var row = yield _ctnu([_Mysql.conn, 'query'], "select cid from course_info where name='" + Sselect + "';");
 		var cid = row[0].cid;
-		var parament = [userid, title, content, cid, section, mark, annex];
+		var parament = [userid, title, content, cid, section, mark, annex, time];
 
-		var sqlstr = "insert into work_info(userid,title,content,cid,section,mark,annex) values(?,?,?,?,?,?,?)";
+		var sqlstr = "insert into work_info(userid,title,content,cid,section,mark,annex,enddate) values(?,?,?,?,?,?,?,?)";
 		var rows = yield _ctnu([_Mysql.conn, 'query'], sqlstr, parament);
 		console.log(">>>>", rows.affectedRows);
 		var check = rows.affectedRows;
-		ctx.body = check;
+		ctx.body = __newMsg(1, 'ok', check);
 		return ctx;
 	});
 	return co;
@@ -255,6 +266,51 @@ _rotr.apis.worklist = function () {
 	});
 	return co;
 };
+
+_rotr.apis.kuWorkDetail = function () {
+	var ctx = this;
+	var co = $co(function* () {
+		var wid = ctx.query.wid || ctx.request.body.wid;
+		var sqlstr = "SELECT wid, w.userid userid,title,content,annex,mark,c.`name` as cname,section,enddate,creatdate,u.`name` as xname FROM work_info w LEFT JOIN course_info c on w.cid=c.cid LEFT JOIN user_info u ON w.userid=u.userid  where wid = " + wid + ";";
+		var rows = yield _ctnu([_Mysql.conn, 'query'], sqlstr);
+		if (!rows) Error("找不到作业");
+		console.log(">>>>", rows);
+		ctx.body = rows;
+		return ctx;
+	});
+	return co;
+};
+
+//管理员添加公告
+_rotr.apis.addNotice = function () {
+	var ctx = this;
+	var co = $co(function* () {
+		var userid = ctx.query.userid;
+		var content = ctx.query.content;
+		var sqlstr = "insert into notice(content,uid) values('" + content + "'," + userid + ")";
+		var row = yield _ctnu([_Mysql.conn, "query"], sqlstr);
+		ctx.body = {
+			content: content,
+			rows: row["affectedRows"]
+		};
+		return ctx;
+	});
+	return co;
+};
+
+//获取数据库中的公告和信息
+_rotr.apis.getNotice = function () {
+	var ctx = this;
+	var co = $co(function* () {
+		var content = ctx.query.content;
+		var sqlstr = "select * from notice order by createtime desc";
+		var rows = yield _ctnu([_Mysql.conn, "query"], sqlstr);
+		ctx.body = rows
+		return ctx;
+	});
+	return co;
+};
+
 var db = [];
 
 
